@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limpeza Pesada, Impacto Leve 🌿</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+        background-color: #eaf4f4;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+    }
+
+    .folha {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 18px;
+        padding: 35px 30px;
+        box-shadow: 0 4px 20px rgba(11, 61, 145, 0.08);
+    }
+
+    /* Cabeçalho */
+    .topo {
+        text-align: center;
+        border-bottom: 2px dashed #a8d5d5;
+        padding-bottom: 20px;
+        margin-bottom: 25px;
+    }
+
+    .topo h1 {
+        color: #0b3d91;
+        font-size: 26px;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+    }
+
+    .topo .sub {
+        color: #1f9d8f;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 12px;
+    }
+
+    .topo .creditos {
+        font-size: 13px;
+        color: #777;
+        line-height: 1.5;
+    }
+
+    /* Seções */
+    h2 {
+        color: #0b3d91;
+        font-size: 19px;
+        margin: 30px 0 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    h2 .bolinha {
+        width: 26px;
+        height: 26px;
+        background: #a8d5d5;
+        color: #0b3d91;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    p { font-size: 15.5px; margin-bottom: 12px; text-align: justify; }
+
+    /* Imagem */
+    .imagem {
+        text-align: center;
+        margin: 15px 0 5px;
+    }
+
+    .imagem img {
+        max-width: 100%;
+        border-radius: 12px;
+        border: 3px solid #a8d5d5;
+    }
+
+    .legenda {
+        font-size: 13px;
+        color: #888;
+        text-align: center;
+        margin-top: 8px;
+        font-style: italic;
+    }
+
+    /* Vídeo */
+    .video {
+        background: #0b3d91;
+        padding: 12px;
+        border-radius: 14px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .video iframe {
+        width: 100%;
+        max-width: 720px;
+        aspect-ratio: 16/9;
+        border: none;
+        border-radius: 8px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .video-aviso {
+        color: #cfe0ff;
+        font-size: 12.5px;
+        margin-top: 8px;
+        font-style: italic;
+    }
+
+    /* Quiz */
+    .quiz {
+        background: #f3fbfb;
+        border: 2px dashed #a8d5d5;
+        border-radius: 14px;
+        padding: 22px;
+        margin-top: 15px;
+    }
+
+    .pergunta {
+        margin-bottom: 22px;
+        padding-bottom: 15px;
+        border-bottom: 1px dotted #cfe3e3;
+    }
+
+    .pergunta:last-of-type { border-bottom: none; }
+
+    .pergunta p {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #0b3d91;
+        text-align: left;
+    }
+
+    .opcao {
+        display: block;
+        padding: 8px 12px;
+        margin-bottom: 5px;
+        border-radius: 8px;
+        background: #fff;
+        border: 1px solid #ddeeee;
+        cursor: pointer;
+        font-size: 14.5px;
+        transition: 0.15s;
+        text-align: left;
+    }
+
+    .opcao:hover { background: #eaf4f4; border-color: #a8d5d5; }
+
+    .opcao input { margin-right: 8px; accent-color: #1f9d8f; }
+
+    .opcao.certa { background: #d9f5e3; border-color: #4caf50; }
+    .opcao.errada { background: #fde0e0; border-color: #e57373; }
+
+    .btn {
+        background: #1f9d8f;
+        color: #fff;
+        border: none;
+        padding: 11px 28px;
+        font-size: 15px;
+        font-family: inherit;
+        font-weight: bold;
+        border-radius: 30px;
+        cursor: pointer;
+        display: block;
+        margin: 5px auto 0;
+        transition: 0.2s;
+    }
+
+    .btn:hover { background: #17867a; transform: scale(1.03); }
+
+    #resultado {
+        text-align: center;
+        margin-top: 18px;
+        font-size: 16px;
+        font-weight: bold;
+        min-height: 24px;
+        color: #0b3d91;
+    }
+
+    /* Rodapé */
+    footer {
+        text-align: center;
+        margin-top: 35px;
+        padding-top: 18px;
+        border-top: 2px dashed #a8d5d5;
+        font-size: 13px;
+        color: #888;
+    }
+
+    footer .coracao { color: #e57373; }
+</style>
+</head>
+<body>
+
+<div class="folha">
+
+    <!-- ===== CABEÇALHO ===== -->
+    <div class="topo">
+        <h1>🌿 LIMPEZA PESADA, IMPACTO LEVE</h1>
+        <p class="sub">O perigo das misturas caseiras e a solução pela Química Verde</p>
+        <p class="creditos">
+            Trabalho de Química — 1º E.M. Técnico em Informática<br>
+            Thiago de Souza · Tiago Silvestre · Vinicius Machado · Davi Souza<br>
+            Professor: Thiago Petermann · 2026
+        </p>
+    </div>
+
+    <!-- ===== IMAGEM ===== -->
+    <h2><span class="bolinha">1</span> O problema no nosso cotidiano</h2>
+    <p>
+        Quem nunca pensou que "misturar dois produtos limpa melhor"? Só que essa ideia
+        é perigosa. Ao juntar produtos diferentes, podem se formar gases tóxicos que a
+        gente nem vê — e só percebe quando já está sentindo ardência no peito, tosse ou
+        falta de ar.
+    </p>
+    <p>
+        O caso mais clássico é misturar <strong>água sanitária</strong> (hipoclorito de
+        sódio) com produtos que têm <strong>amônia</strong>, como alguns limpa-vidros.
+        A reação libera <strong>cloramina</strong>, um gás muito irritante e perigoso.
+    </p>
+
+    <div class="imagem">
+        <!-- Troque "infografico.jpg" pelo nome do arquivo da sua imagem -->
+        <img src="./Quimica.jpeg" alt="Infográfico do trabalho sobre Limpeza Pesada, Impacto Leve">
+        <p class="legenda">Nosso infográfico explicando o problema e a proposta da Química Verde.</p>
+    </div>
+
+    <!-- ===== VÍDEO ===== -->
+    <h2><span class="bolinha">2</span> Nosso vídeo</h2>
+    <p>
+        Fizemos um vídeo curtinho explicando a química por trás do problema e como a
+        Química Verde pode ajudar. Dá uma olhada! 👇
+    </p>
+
+    <div class="video">
+        <!-- 
+             SUBSTITUA o link abaixo pelo vídeo de vocês.
+             Pegue o código do vídeo no YouTube: 
+             https://www.youtube.com/watch?v=XXXXXXXX
+             e troque por: https://www.youtube.com/embed/XXXXXXXX
+        -->
+        <iframe src="https://www.youtube.com/embed/SEU_VIDEO_AQUI"
+                title="Vídeo do trabalho de Química"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+        <p class="video-aviso">(substituir o link pelo vídeo do grupo)</p>
+    </div>
+
+    <!-- ===== QUIZ ===== -->
+    <h2><span class="bolinha">3</span> Quiz: será que o professor acerta tudo? 😏</h2>
+    <p>
+        Preparamos 5 perguntas sobre o tema. A ideia é simples: se o professor de Química
+        errar alguma, a gente ganha moral! 😄
+    </p>
+
+    <div class="quiz" id="quizBox">
+
+        <div class="pergunta" data-correta="c">
+            <p>1. Qual é a fórmula química da cloramina, gás tóxico formado ao misturar água sanitária com amônia?</p>
+            <label class="opcao"><input type="radio" name="q1" value="a"> NH₄Cl</label>
+            <label class="opcao"><input type="radio" name="q1" value="b"> NCl₃ apenas</label>
+            <label class="opcao"><input type="radio" name="q1" value="c"> NH₂Cl</label>
+            <label class="opcao"><input type="radio" name="q1" value="d"> HNO₃</label>
+        </div>
+
+        <div class="pergunta" data-correta="b">
+            <p>2. Se misturarmos água oxigenada (H₂O₂) com água sanitária (NaClO), o que ocorre?</p>
+            <label class="opcao"><input type="radio" name="q2" value="a"> Nada, os dois são oxidantes e se anulam</label>
+            <label class="opcao"><input type="radio" name="q2" value="b"> Decomposição exotérmica com liberação rápida de O₂ e calor</label>
+            <label class="opcao"><input type="radio" name="q2" value="c"> Formação de gás cloro (Cl₂)</label>
+            <label class="opcao"><input type="radio" name="q2" value="d"> Formação de cloreto de sódio e água, sem risco</label>
+        </div>
+
+        <div class="pergunta" data-correta="d">
+            <p>3. Qual princípio da Química Verde está mais diretamente ligado à ideia de "eliminar misturas reativas que podem causar acidentes"?</p>
+            <label class="opcao"><input type="radio" name="q3" value="a"> Princípio 1 — Prevenção de resíduos</label>
+            <label class="opcao"><input type="radio" name="q3" value="b"> Princípio 4 — Produtos seguros</label>
+            <label class="opcao"><input type="radio" name="q3" value="c"> Princípio 10 — Degradação segura</label>
+            <label class="opcao"><input type="radio" name="q3" value="d"> Princípio 12 — Prevenção de acidentes</label>
+        </div>
+
+        <div class="pergunta" data-correta="a">
+            <p>4. Por que a Química Verde propõe usar vinagre, bicarbonato e água oxigenada <u>separadamente</u> e não misturados?</p>
+            <label class="opcao"><input type="radio" name="q4" value="a"> Para evitar reações cruzadas que geram subprodutos tóxicos ou anulam a eficácia</label>
+            <label class="opcao"><input type="radio" name="q4" value="b"> Porque misturados eles não fazem espuma</label>
+            <label class="opcao"><input type="radio" name="q4" value="c"> Porque juntos formam apenas água e sal, sem utilidade</label>
+            <label class="opcao"><input type="radio" name="q4" value="d"> Porque são incompatíveis e explodem</label>
+        </div>
+
+        <div class="pergunta" data-correta="c">
+            <p>5. Sobre a água sanitária (hipoclorito de sódio), qual afirmação está <strong>correta</strong>?</p>
+            <label class="opcao"><input type="radio" name="q5" value="a"> Pode ser misturada com qualquer produto desde que em pouca quantidade</label>
+            <label class="opcao"><input type="radio" name="q5" value="b"> Não reage com matéria orgânica, por isso é segura</label>
+            <label class="opcao"><input type="radio" name="q5" value="c"> Em contato com ácidos libera gás cloro (Cl₂), que é altamente tóxico</label>
+            <label class="opcao"><input type="radio" name="q5" value="d"> É um composto orgânico biodegradável</label>
+        </div>
+
+        <button class="btn" onclick="corrigir()">Ver resultado</button>
+        <div id="resultado"></div>
+    </div>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer>
+        <p>Feito com <span class="coracao">♥</span> para a aula de Química — 2026</p>
+        <p>Fontes: nosso infográfico + princípios da Química Verde (Anastas & Warner)</p>
+    </footer>
+
+</div>
+
+<script>
+    function corrigir() {
+        const quiz = document.getElementById('quizBox');
+        const perguntas = quiz.querySelectorAll('.pergunta');
+        let acertos = 0;
+
+        perguntas.forEach(function (p) {
+            const correta = p.dataset.correta;
+            const opcoes = p.querySelectorAll('.opcao');
+            let marcou = false;
+
+            opcoes.forEach(function (o) {
+                const input = o.querySelector('input');
+                o.classList.remove('certa', 'errada');
+
+                if (input.checked) {
+                    marcou = true;
+                    if (input.value === correta) {
+                        o.classList.add('certa');
+                        acertos++;
+                    } else {
+                        o.classList.add('errada');
+                    }
+                }
+            });
+
+            // se não marcou, mostra a certa
+            if (!marcou) {
+                opcoes.forEach(function (o) {
+                    if (o.querySelector('input').value === correta) {
+                        o.classList.add('certa');
+                    }
+                });
+            }
+        });
+
+        const res = document.getElementById('resultado');
+
+        if (acertos === perguntas.length) {
+            res.innerHTML = "🤯 O professor acertou TUDO! " + acertos + "/" + perguntas.length + ". Tá difícil competir com ele...";
+            res.style.color = "#1f9d8f";
+        } else if (acertos >= 3) {
+            res.innerHTML = "😎 O professor fez " + acertos + "/" + perguntas.length + ". Quase perfeito, mas a gente achou um furo!";
+            res.style.color = "#0b3d91";
+        } else {
+            res.innerHTML = "🎉 Eita! O professor só acertou " + acertos + "/" + perguntas.length + ". A gente venceu essa! 😄";
+            res.style.color = "#e57373";
+        }
+    }
+</script>
+
+</body>
+</html>
